@@ -1,0 +1,49 @@
+       <nav id="menu" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+          <a class="navbar-brand" href="/">
+              <img src="/img/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+              APP de Notas
+          </a>
+    
+    
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav mr-auto text-center">
+                <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/about">About</a>
+
+              </div>
+
+             {{#if user}}
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item nav-link" href="/about">Hola, {{user.name}}</li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Gestionar Notas
+                  </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/notes/add">Agregar nueva nota</a>
+                    <a class="dropdown-item" href="/notes">Todas las notas</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/users/logout">Cerrar sesion</a>
+                    
+                    </div>
+                </li>
+              </ul> 
+             {{else}}
+                <ul class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link" href="/users/ingresar">Ingresar</a>
+                    <a class="nav-item nav-link" href="/users/registrar">Registrar</a>
+                </ul>
+             {{/if}} 
+
+
+    
+              <div class="d-flex flex-row justify-content-center">
+                <a href="" class="btn btn-primary mr-2">F</a>
+                <a href="" class="btn btn-danger">Y</a>
+              </div>
+            </div>
+          </nav>
+    
